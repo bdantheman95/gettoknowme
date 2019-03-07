@@ -7,22 +7,24 @@
 {% block app_icon %}
   {# The path you provided in your app.py is accessible through the tethys_app.icon context variable #}
   <img src="{% static tethys_app.icon %}">
+
 {% endblock %}
 
 {# The name you provided in your app.py is accessible through the tethys_app.name context variable #}
 {% block app_title %}{{ tethys_app.name }}{% endblock %}
 
 {% block app_navigation_items %}
-  <li class="title">App Navigation</li>
-  <li class="active"><a href="">Home</a></li>
-  <li><a href="">Jobs</a></li>
-  <li><a href="">Results</a></li>
-  <li class="title">Steps</li>
-  <li><a href="">1. The First Step</a></li>
-  <li><a href="">2. The Second Step</a></li>
-  <li><a href="">3. The Third Step</a></li>
-  <li class="separator"></li>
-  <li><a href="">Get Started</a></li>
+  {% url 'get_to_know_brandon:home' as home_url %}
+  {% url 'get_to_know_brandon:ilike' as ilike_url %}
+  {% url 'get_to_know_brandon:imfrom' as imfrom_url %}
+
+
+  <li class="title">Topics</li>
+  <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">Home Page</a></li>
+  <li class="{% if request.path == imfrom_url %}active{% endif %}"><a href="{{ imfrom_url }}">Where I'm From</a></li>
+  <li class="{% if request.path == ilike_url %}active{% endif %}"><a href="{{ ilike_url }}">Other Facts</a></li>
+
+
 {% endblock %}
 
 {% block app_content %}

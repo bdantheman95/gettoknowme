@@ -1,0 +1,96 @@
+{% extends "get_to_know_brandon/base.html" %}
+{% load tethys_gizmos %}
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+  <style>
+    h3 {
+      max-width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 36px;
+    }
+
+    p {
+      max-width: 80%;
+      margin-left: 11%;
+      font-size: 16px;
+    }
+
+    h1 {
+      max-width: 100%;
+      margin-top: 20%;
+      font-size: 48px;
+      color: red;
+      text-shadow: 2px 2px #771717;
+    }
+
+    h6 {
+      max-width: 95%;
+      font-size: 24px;
+      color: #771717;
+    }
+
+    img {
+    margin-left: 25%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 200px;
+    width: auto;
+    }
+  </style>
+  <h2>Below are some cool facts about me:</h2>
+  <h3>I am a piano tuner.</h3>
+    <p>Being a lover of music, I would have studied piano performance in a heartbeat if I felt like I could make a solid living. But we all know the job opportunities for musicians...I decided I still wanted to do SOMETHING with music, so I started looking for jobs up that ally my freshman year. they hired me and I have been learning every since!</p>
+  <img src="../../../static/get_to_know_brandon/images/grandpiano.jpeg" style="margin-left"/>
+  <h3>I first started piano lessons when I was two</h3>
+    <p>I have 3 older siblings, and I always had to tag along. One time I went up to my mom and asked "Can I try that?"</p>
+  <h3>I am scuba certified</h3>
+    <p>Growing up in hot, sunny Gilbert AZ I lived in the water. I've always loved swimming</p>
+  <img src="../../../static/get_to_know_brandon/images/scubamom.JPG"/><br><br>
+  <img src="../../../static/get_to_know_brandon/images/scubajake.jpg"/>
+  <h3>Family is very important to me</h3>
+    <p>I'm an uncle to 11 nieces and nephews--10 on my side and 1 on my wife's side. Obviously, I'm the favorite uncle</p>
+  <img src="../../../static/get_to_know_brandon/images/coopermae.JPG"; style="transform: rotate(90deg); height: 400px; margin-top:70px;"/><br><br>
+  <img src="../../../static/get_to_know_brandon/images/everest.jpg"; style="height: 400px;"/><br><br>
+  <img src="../../../static/get_to_know_brandon/images/bella.JPG" style="height: 350px;"/><br><br>
+  <img src="../../../static/get_to_know_brandon/images/maevienna.JPG"; style="transform: rotate(90deg); height: 400px;"/><br><br>
+  <div style="max-width: 60%; margin-left: auto; margin-right: auto;">
+    <h1>I'm gonna be a dad!!</h1>
+      <h6>My wife and I are expecting our first little one. She's going to be a girl! We have been married for 9 months, and my wife is due May 23 (yes, we will have been married 11 months when the baby is born), and we are going to name her Lily :)</h6>
+    <img src="../../../static/get_to_know_brandon/images/lily.JPG" style="height: 400px;"/>
+  </div>
+
+{% endblock %}
+
+{# Use the after_app_content block for modals #}
+{% block after_app_content %}
+  <!-- Example Modal -->
+  <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="help-modal-label">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h5 class="modal-title" id="help-modal-label">Example Modal</h5>
+        </div>
+        <div class="modal-body">
+          <p>You can add custom buttons to the app header using the <code>header_buttons</code> block. Use anchor/link tags for the button and wrap it in a div with the class <code>header-button</code>. For buttons with the gliphyicons, add the <code>glyphicon-button</code> class as well.</p>
+          <p>Ever have trouble using a modal in a Tethys app? Use the <code>after_app_content</code> block for modal content to allow them to function properly. See: <a href="https://getbootstrap.com/javascript/#modals">Bootstrap Modals</a></p>
+          <p>Add tooltips to any element by adding the <code>data-toggle</code>, <code>data-placement</code>, and <code>title</code> attributes to the button. See: <a href="https://getbootstrap.com/javascript/#tooltips">Bootstrap Tooltips</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block app_actions %}
+{% endblock %}
